@@ -12,4 +12,4 @@ This is a simple website project about Kigali city.
 To showcase places to visit and eat in Kigali.
 
 ## Author:
-yvette
+yvette, FRONTEND
