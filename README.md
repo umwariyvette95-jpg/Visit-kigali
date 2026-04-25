@@ -7,6 +7,7 @@ This is a simple website project about Kigali city.
 - Nyamirambo page
 - Kigali Heights page
 - Restaurants page
+- grnocide memorial
 
 ## Purpose:
 To showcase places to visit and eat in Kigali.
