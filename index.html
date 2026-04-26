@@ -4,206 +4,355 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Kigali Guide | Visit Rwanda</title>
-  <link rel="stylesheet" href="css/index.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f8f6f2 0%, #efebe5 100%);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      color: #1e2a2f;
+    }
+
+    .hero-food {
+      background: linear-gradient(135deg, #2c4a3b 0%, #1e3a2f 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero-food .tag {
+      font-size: 0.8rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #e9cca6;
+      margin-bottom: 1rem;
+    }
+
+    .hero-food h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-food h2 {
+      font-size: 2rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #f2e0c9;
+      margin-bottom: 1rem;
+    }
+
+    .hero-food p {
+      max-width: 650px;
+      margin: 1rem auto 0;
+      font-size: 1.1rem;
+      opacity: 0.92;
+    }
+
+    .nav-bar {
+      background: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      border-bottom: 1px solid #ece6df;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255,255,245,0.97);
+      backdrop-filter: blur(2px);
+    }
+
+    .nav-bar a {
+      text-decoration: none;
+      color: #2d4a3e;
+      font-weight: 500;
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .nav-bar a:hover, .nav-bar a.active {
+      background: #e9dfd3;
+      color: #1a3a30;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 2rem auto;
+      padding: 0 1.8rem 2.5rem;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-header h1 {
+      color: #2c423c;
+      font-size: 2.8rem;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: #5a6e64;
+    }
+
+    .hero-image-page {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 28px;
+      margin: 1rem 0 2rem;
+      box-shadow: 0 12px 24px -12px rgba(0,0,0,0.2);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .resto-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: 0.3s ease;
+      box-shadow: 0 12px 26px -10px rgba(0, 0, 0, 0.08);
+      border: 1px solid #ede3d7;
+    }
+
+    .resto-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 32px -12px rgba(0, 0, 0, 0.12);
+    }
+
+    .resto-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .resto-info {
+      padding: 1.5rem;
+    }
+
+    .resto-info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+      color: #2c423c;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: transparent;
+      border: 1px solid #c9a87b;
+      color: #7a5a3a;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #c9a87b;
+      color: white;
+    }
+
+    .info-block {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .info-block h2 {
+      color: #2c423c;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .info-table th, .info-table td {
+      padding: 0.9rem;
+      text-align: left;
+      border-bottom: 1px solid #e9e1d8;
+    }
+    .info-table th {
+      background: #2c423c;
+      color: white;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .info-list {
+      background: #fefaf5;
+      padding: 1.5rem;
+      border-radius: 20px;
+    }
+
+    .info-list h3 {
+      margin-bottom: 1rem;
+      color: #2c423c;
+    }
+
+    .info-list ul {
+      padding-left: 1.4rem;
+    }
+
+    .info-list li {
+      margin: 0.8rem 0;
+      color: #3b554b;
+    }
+
+    .media-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0;
+      background: white;
+      border-radius: 32px;
+      padding: 1.8rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .media-card {
+      flex: 1;
+    }
+
+    .media-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #2c423c;
+    }
+
+    video, audio {
+      width: 100%;
+      border-radius: 20px;
+      outline: none;
+    }
+
+    .map-wrapper {
+      margin: 2rem 0;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 12px 24px -12px rgba(0,0,0,0.15);
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 420px;
+      border: 0;
+    }
+
+    footer {
+      background: #1f2e2a;
+      color: #ddd8cf;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #e2c8a8;
+      text-decoration: none;
+    }
+
+    @media (max-width: 750px) {
+      .hero-food h1 { font-size: 2.4rem; }
+      .page-header h1 { font-size: 2rem; }
+      .two-columns { grid-template-columns: 1fr; }
+      .hero-image-page { height: 250px; }
+    }
+  </style>
 </head>
- <body style="background-color: #e2e9f0;"
+<body>
 
-  <!-- HERO SECTION -->
-  <div class="hero-refined">
-    <div class="tagline">WELCOME TO THE LAND OF A THOUSAND HILLS</div>
-    <h1>Discover</h1>
-    <h2>Kigali</h2>
-    <p>Rwanda's vibrant capital – where culture, cuisine, and adventure meet.</p>
-    <a href="#explore" class="btn-start">Start Exploring →</a>
+<div class="hero-food">
+  <div class="tag">WELCOME TO THE LAND OF A THOUSAND HILLS</div>
+  <h1>Discover</h1>
+  <h2>Kigali</h2>
+  <p>Rwanda's vibrant capital – where culture, cuisine, and adventure meet.</p>
+</div>
+
+<nav class="nav-bar">
+  <a href="index.html" class="active">🏠 Home</a>
+  <a href="kigali-heights.html">🏙️ Kigali Heights</a>
+  <a href="genocide-memorial.html">🕊️ Genocide Memorial</a>
+  <a href="restaurants.html">🍽️ Restaurants</a>
+  <a href="nyarugenge.html">🏘️ Nyarugenge</a>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <h1>Explore Rwanda's Vibrant Capital</h1>
+    <p>Kigali, Africa's cleanest city and rising hub of art, gastronomy and innovation. Use our guide to discover authentic neighborhoods, breathtaking views, delicious cuisine and powerful history.</p>
+  </div>
+  <img src="https://www.mwckigali.com/cdn-cgi/image/f=auto/https://event-assets.gsma.com/mwc_africa_venue.jpg" class="hero-image-page" alt="Kigali city">
+
+  <div class="cards-grid">
+    <div class="resto-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXrSYHRU0Z1JdW5b5we0wHX_LzuVdkdp4qaQ&s"><div class="resto-info"><h3>Nyamirambo</h3><p>Vibrant streets, local markets, art & nightlife.</p><a href="nyarugenge.html" class="btn">Explore →</a></div></div>
+    <div class="resto-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIGYFIglCScaJ18k-XE-iv_A2Uf-aOepND4Q&s"><div class="resto-info"><h3>Kigali Heights</h3><p>Upscale dining, panoramic views & modern skyline.</p><a href="kigali-heights.html" class="btn">Explore →</a></div></div>
+    <div class="resto-card"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/bf/49/d3/our-night-view.jpg"><div class="resto-info"><h3>Restaurants</h3><p>Fusion cuisine to traditional brochettes.</p><a href="restaurants.html" class="btn">Dine →</a></div></div>
+    <div class="resto-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkQ8fju7QsQY3T9TBsRTHUswJfZxdc2vANgQ&s"><div class="resto-info"><h3>Genocide Memorial</h3><p>Honor history, resilience, and hope.</p><a href="genocide-memorial.html" class="btn">Learn →</a></div></div>
   </div>
 
-  <!-- NAVIGATION -->
-  <nav class="nav-bar">
-    <a href="index.html" class="active">🏠 Home</a>
-    <a href="nyamirambo.html"> Nyamirambo</a>
-    <a href="kigali-heights.html"> Kigali Heights</a>
-    <a href="restaurant.html"> Restaurants</a>
-    <a href="genocide-memorial.html"> Genocide Memorial</a>
-  </nav>
-
-  <!-- MAIN CONTENT -->
-  <div class="container" id="explore">
-    <div class="grid-container">
-
-      <section>
-        <h2>Explore Rwanda's Vibrant Capital</h2>
-        <p>Kigali, Africa's cleanest city and rising hub of art, gastronomy and innovation. Use our guide to discover authentic neighborhoods, breathtaking views, delicious cuisine and powerful history.</p>
-      </section>
-
-      <!-- DESTINATION CARDS -->
-      <div class="cards-grid">
-        <div class="card">
-          <img src="c:\Users\dell\Downloads\amarangi.jpg" alt="Nyamirambo colorful street">
-          <div class="card-content">
-            <h3>Nyamirambo</h3>
-            <p>Vibrant streets, local markets, art &amp; authentic Kigali nightlife.</p>
-            <a href="nyamirambo.html" class="btn">Explore →</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="c:\Users\dell\Downloads\kigaliheight.jpg" alt="Kigali Heights View">
-          <div class="card-content">
-            <h3>Kigali Heights</h3>
-            <p>Upscale dining, panoramic views &amp; modern skyline.</p>
-            <a href="kigali-heights.html" class="btn">Explore →</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="c:\Users\dell\Downloads\restaurant.jpg" alt="Gourmet Restaurant">
-          <div class="card-content">
-            <h3>Restaurants</h3>
-            <p>From fusion cuisine to traditional brochettes.</p>
-            <a href="restaurant.html" class="btn">Dine →</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="c:\Users\dell\Downloads\genocide memorial.jpg" alt="Genocide Memorial">
-          <div class="card-content">
-            <h3>Kigali Genocide Memorial</h3>
-            <p>Honor history, resilience, and hope.</p>
-            <a href="genocide-memorial.html" class="btn">Learn →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- EXPERIENCES TABLE -->
-      <div>
-        <h2>📊 Essential Kigali Experiences</h2>
-        <table class="info-table">
-          <thead>
-            <tr><th>Activity / Place</th><th>District</th><th>Best Time</th><th>Highlight</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Nyamirambo Women's Center Tour</td><td>Nyamirambo</td><td>Morning</td><td>Handmade crafts</td></tr>
-            <tr><td>Kigali Car Free Zone</td><td>Kiyovu</td><td>Weekend</td><td>Live music &amp; art</td></tr>
-            <tr><td>Heights Rooftop Brunch</td><td>Kigali Heights</td><td>Sunset</td><td>360° views</td></tr>
-            <tr><td>Kimironko Market</td><td>Remera</td><td>10 AM</td><td>Fresh produce &amp; fabrics</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- LISTS -->
-      <div class="list-container">
-        <div class="list-box">
-          <h4>🎒 Packing Essentials</h4>
-          <ol>
-            <li>Light layers &amp; rain jacket</li>
-            <li>Comfortable walking shoes</li>
-            <li>Power bank &amp; universal adapter</li>
-            <li>Reusable water bottle</li>
-            <li>Camera for hills &amp; cityscape</li>
-          </ol>
-        </div>
-        <div class="list-box">
-          <h4>📍 Local Tips</h4>
-          <ul>
-            <li>Use Yego or Move taxis for safe transit</li>
-            <li>Try "brochettes" &amp; "Ugali" at local spots</li>
-            <li>Respect memorial etiquette</li>
-            <li>Visit Caplaki craft market</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- VIDEO + AUDIO -->
-      <div class="media-row">
-        <div>
-          <h3>🎥 Kigali City Vibes</h3>
-          <video controls poster="https://picsum.photos/id/20/400/220">
-            <source src="c:\Users\dell\Downloads\rwanda (1).mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-        </div>
-        <div>
-          <h3>🎵 Traditional Melody</h3>
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-            Your browser does not support audio.
-          </audio>
-          <p>Inspired by Rwandan rhythms</p>
-        </div>
-      </div>
-
-      <!-- MAP -->
-      <div class="map-embed">
-        <h3>📍 Explore Kigali – Nyamirambo &amp; Downtown</h3>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.4765!2d30.0588!3d-1.9441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca5c28bdbd7a1%3A0x7a0d6ad0d6c0e1!2sNyamirambo%2C%20Kigali!5e0!3m2!1sen!2srw!4v1712345678901!5m2!1sen!2srw" allowfullscreen loading="lazy" title="Kigali Map"></iframe>
-      </div>
-
-      <!-- INQUIRY FORM -->
-      <div class="inquiry-form">
-        <h3>✉️ Plan Your Kigali Adventure</h3>
-        <form action="#" method="post">
-          <div class="form-group"><input type="text" placeholder="Full Name" required></div>
-          <div class="form-group"><input type="email" placeholder="Email Address" required></div>
-          <div class="form-group">
-            <select>
-              <option>I need travel tips</option>
-              <option>Restaurant reservation help</option>
-              <option>Cultural tours</option>
-            </select>
-          </div>
-          <div class="form-group"><textarea rows="3" placeholder="Your message..."></textarea></div>
-          <button type="submit">Send Inquiry ✨</button>
-        </form>
-      </div>
-
-      <p class="external-link">
-        📢 Learn more about Rwanda's open visa:
-        <a href="https://visitrwanda.com/" target="_blank">Official Visit Rwanda Website ↗</a>
-      </p>
-
-    </div>
+  <div class="info-block">
+    <h2>📊 Essential Kigali Experiences</h2>
+    <table class="info-table">
+      <thead><tr><th>Activity</th><th>District</th><th>Best Time</th></tr></thead>
+      <tbody>
+        <tr><td>Nyamirambo Women's Center</td><td>Nyamirambo</td><td>Morning</td></tr>
+        <tr><td>Kigali Car Free Zone</td><td>Kiyovu</td><td>Weekend</td></tr>
+        <tr><td>Kimironko Market</td><td>Remera</td><td>10 AM</td></tr>
+      </tbody>
+    </table>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="footer-brand">🇷🇼 Visit Kigali</div>
-        <p>Rwanda's capital — Africa's cleanest, greenest, and most welcoming city. Your journey begins here.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Explore</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="nyamirambo.html">Nyamirambo</a></li>
-          <li><a href="kigali-heights.html">Kigali Heights</a></li>
-          <li><a href="restaurant.html">Restaurants</a></li>
-          <li><a href="genocide-memorial.html">Genocide Memorial</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Plan Your Trip</h5>
-        <ul>
-          <li><a href="#">Getting to Kigali</a></li>
-          <li><a href="#">Where to Stay</a></li>
-          <li><a href="#">Local Transport</a></li>
-          <li><a href="#">Visa Information</a></li>
-          <li><a href="https://visitrwanda.com/" target="_blank">Official Visit Rwanda ↗</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Contact</h5>
-        <p>📞 +250 788 978105</p>
-        <p>✉️ explore@visitkigali.rw</p>
-        <p>📍 KN 5 Rd, Kigali, Rwanda</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Visit Kigali. Designed with ❤️ for cultural exploration.</span>
-      <span>
-        <a href="index.html">Home</a> &nbsp;|&nbsp;
-        <a href="#">Privacy</a> &nbsp;|&nbsp;
-        <a href="#">Top ↑</a>
-      </span>
-    </div>
-  </footer>
+  <div class="two-columns">
+    <div class="info-list"><h3>🎒 Packing Essentials</h3><ul><li>Light layers & rain jacket</li><li>Comfortable walking shoes</li><li>Power bank & adapter</li><li>Reusable water bottle</li></ul></div>
+    <div class="info-list"><h3>📍 Local Tips</h3><ul><li>Use Yego or Move taxis</li><li>Try "brochettes" & "Ugali"</li><li>Respect memorial etiquette</li><li>Visit Caplaki craft market</li></ul></div>
+  </div>
+
+  <div class="media-row">
+    <div class="media-card"><h3>🎥 Kigali City Vibes</h3><video controls poster="https://images.unsplash.com/photo-1573995010323-44d3e1397ab2?w=600&auto=format"><source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4"></video></div>
+    <div class="media-card"><h3>🎵 Traditional Melody</h3><audio controls><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg"></audio><p>Inspired by Rwandan rhythms</p></div>
+  </div>
+
+  <div class="map-wrapper">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5905!2d30.0900!3d-1.9441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca5c28bdbd7a1%3A0x7a0d6ad0d6c0e1!2sNyamirambo%2C%20Kigali!5e0!3m2!1sen!2srw!4v1712345678901!5m2!1sen!2srw" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+
+<footer>
+  <p>🇷🇼 Kigali Eats & Adventures — Your ultimate guide to dining, culture & things to do in Rwanda’s capital.</p>
+  <p>✉️ info@kigalieats.rw | 📞 +250 788 123 456 | <a href="index.html">Back to Home</a></p>
+</footer>
 
 </body>
 </html>

@@ -1,0 +1,67 @@
+/* ===== GENOCIDE MEMORIAL PAGE CSS ===== */
+@import url('shared.css');
+
+/* ===== ADDED: Full grey background for the entire page ===== */
+body {
+  background-color: #787978;
+}
+
+/* ===== ADDED: Content wrapper background to match ===== */
+.container,
+.main-content,
+.page-wrapper {
+  background-color: #4d4e4d;
+}
+
+.hero {
+  min-height: 55vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 100px;
+  padding: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero--memorial {
+  background: linear-gradient(160deg, #1a1a2e 0%, #2a2a3a 40%, #3a3a4a 100%);
+}
+
+.hero--memorial::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.1) 0%, transparent 60%);
+}
+
+/* ===== INCREASED TEXT SIZES ===== */
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 100px;  /* INCREASED: from 2.5rem/5rem to 3rem/6rem */
+  font-weight: 900;
+  color: var(--Green);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 60px;  /* INCREASED: from 16px to 20px */
+}
+
+.hero p {
+  font-size: 60px;  /* INCREASED: from 18px to 22px */
+  color: var(--text-body);
+  max-width: 700px;  /* INCREASED: from 640px to 700px */
+  position: relative;
+  z-index: 1;
+  line-height: 60px;  /* ADDED: better readability */
+}
+
+/* ===== OPTIONAL: Increase other text elements on the page ===== */
+/* Add these if you want to increase text size for other content */
+h2, h3, h4 {
+  font-size: 70px;  /* Adjust as needed */
+}
+
+p, li, .description {
+  font-size: 40px;
+  line-height: 1.6;
+}

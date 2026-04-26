@@ -1,0 +1,82 @@
+/* ===== INDEX PAGE CSS ===== */
+@import url('shared.css');
+
+/* HERO */
+.hero-refined {
+  background: linear-gradient(135deg, #1a3028 0%, #2a4a38 50%, #3a5a48 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 80px 80px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-refined::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(61,107,80,0.4) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-refined h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(4rem, 9vw, 8rem);
+  font-weight: 900;
+  color: var(--Pink);
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.hero-refined .tagline {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 24px;
+  margin-bottom: 32px;
+  width: fit-content;
+}
+
+.hero-refined h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.hero-refined p {
+  font-family: poppins; sans-serif;s
+  font-size: 20px;
+  color: var(--text-body);
+  max-width: 480px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.btn-start {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white);
+  font-family: 'poppins'; sans-serif;
+  padding: 18px 40px;
+  border-radius: 36px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: background 0.2s, transform 0.2s;
+  width: fit-content;
+}
+
+.btn-start:hover {
+  background: var(--orange-hover);
+  transform: translateY(-3px);
+}
