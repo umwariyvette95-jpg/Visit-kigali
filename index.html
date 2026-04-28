@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Kigali Guide | Visit Rwanda</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     * {
       margin: 0;
@@ -295,12 +296,18 @@
 
 <div class="hero-food">
   <div class="tag">WELCOME TO THE LAND OF A THOUSAND HILLS</div>
-  <h1>Discover</h1>
-  <h2>Kigali</h2>
-  <p>Rwanda's vibrant capital – where culture, cuisine, and adventure meet.</p>
+   <h1 class="text-2xl md:text-4xl">Discover</h1>
+
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-500">
+  Kigali Guide
+</h1>
+   <h2 class="text-lg md:text-2xl italic">Kigali</h2>
+<p class="mt-4 max-w-xl mx-auto text-sm md:text-lg">
+    Rwanda's vibrant capital – where culture, cuisine, and adventure meet.
+  </p>
 </div>
 
-<nav class="nav-bar">
+<nav class="nav-bar flex flex-wrap justify-center gap-2 md:gap-4">
   <a href="index.html" class="active">🏠 Home</a>
   <a href="kigali-heights.html">🏙️ Kigali Heights</a>
   <a href="genocide-memorial.html">🕊️ Genocide Memorial</a>
@@ -313,9 +320,11 @@
     <h1>Visit Kigali 🇷🇼 - Explore Rwanda</h1>
     <p>Kigali, Africa's cleanest city and rising hub of art, gastronomy and innovation. Use our guide to discover authentic neighborhoods, breathtaking views, delicious cuisine and powerful history.</p>
   </div>
-  <img src="https://www.mwckigali.com/cdn-cgi/image/f=auto/https://event-assets.gsma.com/mwc_africa_venue.jpg" class="hero-image-page" alt="Kigali city">
+ <img src="https://www.mwckigali.com/cdn-cgi/image/f=auto/https://event-assets.gsma.com/mwc_africa_venue.jpg"
+     class="hero-image-page w-full h-64 md:h-96 object-cover"
+     alt="Kigali city">
 
-  <div class="cards-grid">
+ <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     <div class="resto-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXrSYHRU0Z1JdW5b5we0wHX_LzuVdkdp4qaQ&s"><div class="resto-info"><h3>Nyamirambo</h3><p>Vibrant streets, local markets, art & nightlife.</p><a href="nyarugenge.html" class="btn">Explore →</a></div></div>
     <div class="resto-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIGYFIglCScaJ18k-XE-iv_A2Uf-aOepND4Q&s"><div class="resto-info"><h3>Kigali Heights</h3><p>Upscale dining, panoramic views & modern skyline.</p><a href="kigali-heights.html" class="btn">Explore →</a></div></div>
     <div class="resto-card"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/bf/49/d3/our-night-view.jpg"><div class="resto-info"><h3>Restaurants</h3><p>Fusion cuisine to traditional brochettes.</p><a href="restaurants.html" class="btn">Dine →</a></div></div>
@@ -334,13 +343,22 @@
     </table>
   </div>
 
-  <div class="two-columns">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <div class="info-list"><h3>🎒 Packing Essentials</h3><ul><li>Light layers & rain jacket</li><li>Comfortable walking shoes</li><li>Power bank & adapter</li><li>Reusable water bottle</li></ul></div>
     <div class="info-list"><h3>📍 Local Tips</h3><ul><li>Use Yego or Move taxis</li><li>Try "brochettes" & "Ugali"</li><li>Respect memorial etiquette</li><li>Visit Caplaki craft market</li></ul></div>
   </div>
 
-  <div class="media-row">
-    <div class="media-card"><h3>🎥 Kigali City Vibes</h3><video controls poster="https://images.unsplash.com/photo-1573995010323-44d3e1397ab2?w=600&auto=format"><source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4"></video></div>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="media-card">
+  <h3>🎥 Kigali City Vibes</h3>
+  <iframe 
+    width="100%" 
+    height="400" 
+    src="https://www.youtube.com/embed/EFre2l89wUA"
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+</div>
     <div class="media-card"><h3>🎵 Traditional Melody</h3><audio controls><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg"></audio><p>Inspired by Rwandan rhythms</p></div>
   </div>
 
